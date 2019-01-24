@@ -106,7 +106,19 @@ How much weight each of these factors had were tuned manually to obtain a succes
 
 ### Timestep Length and Elapsed Duration (N & dt)
 
-The number of points(`N`) and the time interval(`dt`) define the prediction horizon. The number of points impacts the controller performance as well. I tried to keep the horizon around the same time the waypoints were on the simulator. With too many points the controller starts to run slower, and some times it went wild very easily. After trying with `N` from 10 to 20 and `dt` 100 to 500 milliseconds, I decided to leave them fixed to 10 and 100 milliseconds to have a better result tuning the other parameters.
+  Given the reference trajectory from polynomial fit of waypoints and the motion model of the car, MPC estimates the value of actuator inputs for current time step and few time steps later. This estimate is used to predict the actuator inputs to the car ahead of time. This process of estimate generation is tunable with the use of N and dt. Higher value of N ensures more number of estimates while higher value of dt ensures the estimates are closer in time.
+  Different combinations of values of N and dt were tried and following were the obervations:
+    
+        N and dt            Observation/Effect
+        
+        N = 10, dt = 0.1	  Sharp turns as less number of discrete points between subsequent states
+        N = 20, dt = 0.1	  Estimate too ahead of time resulting in slower implementation of algorithm
+        N = 10, dt = 0.05	  Too close estimates resulting in oscillation of car at slow speeds
+        N = 7, dt = 0.07	  Perfect combination for motion of car
+
+  After trial and error, a setting of **N = 7** and **dt = 0.07 (sec)** was used to predict actuator inputs and the trajectory of car for roughly next 500ms. MPC implementation generates the coordinates and heading of car for next 500ms and is drawn inside the simulator using green curve as shown below:
+    
+![MPC estimate](https://raw.githubusercontent.com/sohonisaurabh/CarND-MPC-Project/master/image-resources/mpc-estimate.png)
 
 ### Polynomial Fitting and MPC Preprocessing
 
