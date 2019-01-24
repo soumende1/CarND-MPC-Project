@@ -137,5 +137,9 @@ To handle actuator latency, the state values are calculated using the model and 
 MPC used to derive the steering angles and throttle/brake for a car moving on a circular track was implemented successfully. The car could stay close to the center of the lane and take smooth left and right turns along its path while reaching speeds as high as 97mph. This was achieved in spite of presence of latency in the system. This is demonstrated below:
 
 ![MPC demo](./images/video-snap.PNG)
+
+
 ![MPC demo](./images/mpc_simulation.mp4)
+
+
 ![MPC demo](./images/mpc_simulation_short.mp4) 
