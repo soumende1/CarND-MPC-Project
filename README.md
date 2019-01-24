@@ -51,6 +51,8 @@ This project implements a [Model Predictive Controller(MPC)](https://en.wikipedi
 
 The code compiles without errors or warnings. No modifications were done on the provided setup.
 
+- PROVIDE IMAGE
+
 ## Implementation
 
 ### The Model
