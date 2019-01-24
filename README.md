@@ -55,7 +55,20 @@ The code compiles without errors or warnings. No modifications were done on the 
 
 ### The Model
 
-The model used is a Kinematic model neglecting the complex interactions between the tires and the road. The model equations are as follow:
+  The motion model in this project was based on the [Kinematic equations of motion]
+    
+  The state consists of following parameters:
+    1. The x coordinate of position of car in vehicle's coordinate system (x)
+    2. The y coordinate of position of car in vehicle's coordinate system (y)
+    3. The heading direction of car in vehicle's coordinate system (psi)
+    4. The magnitude of velocity of car (v)
+    
+  The actuator inputs used to control the car are given below:
+    1. The magnitude of steering (delta). This was limited to [-25, 25] as per the angle specification of simulator.
+    2. The magnitude of throttle (a). This was limited to [-1, 1] as per the throttle/brake specification of simulator.
+    
+
+The model used is a simplified model and ignores the complex interactions between the tires and the road. The model equations are as follow:
 
 ```
 x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt
@@ -74,12 +87,16 @@ Where:
 - `cte` : Cross-track error.
 - `epsi` : Orientation error.
 
-Those values are considered the state of the model. In addition to that, `Lf` is the distance between the car of mass and the front wheels (this is provided by Udacity's seed project). The other two values are the model output:
+Those values are considered the state of the model.
+
+ `Lf` is the distance between the center of mass and the front wheels. 
+ 
+ The other two values are the model output:
 
 - `a` : Car's acceleration (throttle).
 - `delta` : Steering angle.
 
-The objective is to find the acceleration (`a`) and the steering angle(`delta`) in the way it will minimize an objective function that is the combination of different factors:
+The objective of this project is to find the acceleration (`a`) and the steering angle(`delta`) in the way it will minimize an objective function that is the combination of different factors:
 
 - Square sum of `cte` and `epsi`. It could be found [here](./src/MPC.cpp#L55).
 - Square sum of the difference actuators to penalize a lot of actuator's actions. It could be found [here](./src/MPC.cpp#L62).
