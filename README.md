@@ -109,7 +109,7 @@ How much weight each of these factors had were tuned manually to obtain a succes
 ### Timestep Length and Elapsed Duration (N & dt)
 
   Given the reference trajectory from polynomial fit of waypoints and the motion model of the car, MPC estimates the value of actuator inputs for current time step and few time steps later. This estimate is used to predict the actuator inputs to the car ahead of time. This process of estimate generation is tunable with the use of N and dt. Higher value of N ensures more number of estimates while higher value of dt ensures the estimates are closer in time.Different combinations of values of N and dt were tried and following were the obervations:
- After trial and error, a setting of **N = 7** and **dt = 0.07 (sec)** '(./src/MPC.cpp#L10)'  was used to predict actuator inputs and the trajectory of car for roughly next 500ms. MPC implementation generates the coordinates and heading of car for next 500ms and is drawn inside the simulator using green curve.
+ After trial and error, a setting of **N = 7** and **dt = 0.07 (sec)** '[see here](./src/MPC.cpp#L10) was used to predict actuator inputs and the trajectory of car for roughly next 500ms. MPC implementation generates the coordinates and heading of car for next 500ms and is drawn inside the simulator using green curve.
     
 
 
