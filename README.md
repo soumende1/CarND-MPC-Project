@@ -100,9 +100,9 @@ Those values are considered the state of the model.
 
 The objective of this project is to find the acceleration (`a`) and the steering angle(`delta`) in the way it will minimize an objective function that is the combination of different factors:
 
-- Square sum of `cte` and `epsi`. It could be found [here](./src/MPC.cpp#L55).
-- Square sum of the difference actuators to penalize a lot of actuator's actions. It could be found [here](./src/MPC.cpp#L62).
-- Square sum of the difference between two consecutive actuator values to penalize sharp changes. It could be found [here](./src/MPC.cpp#L69).
+- Square sum of `cte` and `epsi`. It could be found [here](./src/MPC.cpp#L60).
+- Square sum of the difference actuators to penalize a lot of actuator's actions. It could be found [here](./src/MPC.cpp#L68).
+- Square sum of the difference between two consecutive actuator values to penalize sharp changes. It could be found [here](./src/MPC.cpp#L79).
 
 How much weight each of these factors had were tuned manually to obtain a successful track ride without leaving the road.
 
@@ -115,7 +115,7 @@ How much weight each of these factors had were tuned manually to obtain a succes
 
 ### Polynomial Fitting and MPC Preprocessing
 
-The waypoints provided by the simulator are transformed to the car coordinate system at [./src/main.cpp](./src/main.cpp#L104) from line 104 to line 113. Then a 3rd-degree polynomial is fitted to the transformed waypoints. These polynomial coefficients are used to calculate the `cte` and `epsi` later on. They are used by the solver as well to create a reference trajectory.
+The waypoints provided by the simulator are transformed to the car coordinate system at [./src/main.cpp](./src/main.cpp#L118). Then a 3rd-degree polynomial is fitted to the transformed waypoints. These polynomial coefficients are used to calculate the `cte` and `epsi` later on. They are used by the solver as well to create a reference trajectory.
 
 ### Model Predictive Control with Latency
 
