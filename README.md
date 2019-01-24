@@ -126,7 +126,7 @@ The waypoints provided by the simulator are transformed to the car coordinate sy
 
 ### Model Predictive Control with Latency
 
-To handle actuator latency, the state values are calculated using the model and the delay interval. These values are used instead of the initial one. The code implementing that could be found at [./src/main.cpp](./src/main.cpp#L121) from line 121 to line 139.
+To handle actuator latency, the state values are calculated using the model and the delay interval. To take into account the effect of this latency, the state parameters for next state were calculated beforehand and were sent to MPC for generating steering and throttle values. This ensured the actuations applied at current point of time were actually for the next time step (i.e. after 100 ms). This small update in state calculation solved the problem of latency and the car was back on track w.r.t. its desired behavior.
 
 ## Simulation 
 
