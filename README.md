@@ -1,9 +1,9 @@
-# CarND-Controls-MPC-P5
-Self-Driving Car Engineer Nanodegree Program
+# CarND-MPC-Project-P5
+Udacity Self-Driving Car Nanodegree - Model Predictive Control (MPC) Project
 
----
-## Overview
-This project implements a Model Predictive Controller(MPC) to control a car in Udacity's simulator(it could be downloaded here). The simulator sends car telemetry information (the data specifications are here) to the MPC using WebSocket and it receives the steering angle and throttle. The MPC uses the uWebSockets WebSocket implementation to handle this communication. Udacity provides a seed project to start from on this project (here).
+# Overview
+
+This project implements a [Model Predictive Controller(MPC)](https://en.wikipedia.org/wiki/Model_predictive_control) to control a car in Udacity's simulator([it could be downloaded here](https://github.com/udacity/self-driving-car-sim/releases)). The simulator sends car telemetry information (the data specifications are [here](./DATA.md)) to the MPC using [WebSocket](https://en.wikipedia.org/wiki/WebSocket) and it receives the steering angle and throttle. The MPC uses the [uWebSockets](https://github.com/uNetworking/uWebSockets) WebSocket implementation to handle this communication. Udacity provides a seed project to start from on this project ([here](https://github.com/udacity/CarND-MPC-Project)).
 
 
 ## Dependencies
