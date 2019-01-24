@@ -1,7 +1,10 @@
-# CarND-Controls-MPC
+# CarND-Controls-MPC-P5
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Overview
+This project implements a Model Predictive Controller(MPC) to control a car in Udacity's simulator(it could be downloaded here). The simulator sends car telemetry information (the data specifications are here) to the MPC using WebSocket and it receives the steering angle and throttle. The MPC uses the uWebSockets WebSocket implementation to handle this communication. Udacity provides a seed project to start from on this project (here).
+
 
 ## Dependencies
 
@@ -38,14 +41,7 @@ Self-Driving Car Engineer Nanodegree Program
 3. Compile: `cmake .. && make`
 4. Run it: `./mpc`.
 
-## Build with Docker-Compose
-The docker-compose can run the project into a container
-and exposes the port required by the simulator to run.
-
-1. Clone this repo.
-2. Build image: `docker-compose build`
-3. Run Container: `docker-compose up`
-4. On code changes repeat steps 2 and 3.
+- PROVIDE IMAGE
 
 ## Tips
 
