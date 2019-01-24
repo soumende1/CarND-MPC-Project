@@ -138,4 +138,4 @@ MPC used to derive the steering angles and throttle/brake for a car moving on a 
 
 ![MPC demo](./images/video-snap.PNG)
 ![MPC demo](./images/mpc_simulation.mp4)
-![MPC demo](./images/mpc_simulation_short.mp4)
+![MPC demo](./images/mpc_simulation_short.mp4) 
