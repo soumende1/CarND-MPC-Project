@@ -41,7 +41,7 @@ This project implements a [Model Predictive Controller(MPC)](https://en.wikipedi
 3. Compile: `cmake .. && make`
 4. Run it: `./mpc`.
 
-- PROVIDE IMAGE
+![See Screenshot](./images/make_build.PNG)
 
 # [Rubic](https://review.udacity.com/#!/rubrics/896/view) points
 
