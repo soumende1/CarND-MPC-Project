@@ -125,7 +125,7 @@ The final implementation consisted of following major steps:
   
   In real world systems as complex as commercial jet planes, there exists certain amount of delay in time between the actuation of control and its effect on the motion. To achieve an implementation close to real world scenario, a latency of 100ms was introduced in the simulator. This delay caused control actuations to reach the car in later of time. This worked fine at low speeds till 25mph but resulted in undesired behavior at high speeds. To take into account the effect of this latency, the state parameters for next state were calculated beforehand and were sent to MPC for generating steering and throttle values. This ensured the actuations applied at current point of time were actually for the next time step (i.e. after 100 ms). This small update in state calculation solved the problem of latency and the car was back on track w.r.t. its desired behavior.
 
-## Project Output
+## Project Output 
 
 MPC used to derive the steering angles and throttle/brake for a car moving on a circular track was implemented successfully. The car could stay close to the center of the lane and take smooth left and right turns along its path while reaching speeds as high as 97mph. This was achieved in spite of presence of latency in the system. This is demonstrated below:
 
