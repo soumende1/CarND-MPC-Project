@@ -120,7 +120,7 @@ How much weight each of these factors had were tuned manually to obtain a succes
 
   After trial and error, a setting of **N = 7** and **dt = 0.07 (sec)** was used to predict actuator inputs and the trajectory of car for roughly next 500ms. MPC implementation generates the coordinates and heading of car for next 500ms and is drawn inside the simulator using green curve as shown below:
     
-![MPC estimate](https://raw.githubusercontent.com/sohonisaurabh/CarND-MPC-Project/master/image-resources/mpc-estimate.png)
+
 
 ### Polynomial Fitting and MPC Preprocessing
 
