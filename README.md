@@ -128,7 +128,7 @@ The waypoints provided by the simulator are transformed to the car coordinate sy
 
 To handle actuator latency, the state values are calculated using the model and the delay interval. These values are used instead of the initial one. The code implementing that could be found at [./src/main.cpp](./src/main.cpp#L121) from line 121 to line 139.
 
-## Simulation
+## Simulation 
 
 ### The vehicle must successfully drive a lap around the track.
 
